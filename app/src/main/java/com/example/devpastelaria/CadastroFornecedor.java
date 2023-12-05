@@ -146,6 +146,8 @@ public class CadastroFornecedor extends AppCompatActivity {
         produtos.put("quantidade", 40);
         dr.set(produtos);*/
 
+        /*"ggrgw"*/
+
 
         documentReference.set(fornecedores).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
