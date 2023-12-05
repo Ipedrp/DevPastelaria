@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".CadastroCliente">
+
+    <TextView
+        android:id="@+id/textCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="CADASTRE-SE"
+        android:textColor="@color/yellow"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071"
+        />
+
+    <View
+        android:id="@+id/container_components"
+        style="@style/ContainerComponentsLogin"
+        android:layout_marginTop="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCadastro"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edit_nome"
+        style="@style/EditText"
+        android:hint="Nome"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toTopOf="@id/container_components"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/EditText"
+        android:hint="E-mail"
+        android:drawableRight="@drawable/icon_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome" />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        style="@style/EditText"
+        android:hint="Senha"
+        android:drawableRight="@drawable/icons_password"
+        android:inputType="numberPassword"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+    <Button
+        android:id="@+id/btncadastroCliente"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:width="300dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Cadastrar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_components"
+        tools:ignore="TextSizeCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
