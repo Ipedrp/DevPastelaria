@@ -34,6 +34,8 @@ public class CadastroFornecedor extends AppCompatActivity {
     String mensagem[] = {"Preencha todos os campos!", "Fornecedor cadastrado com sucesso!"};
     String fornecedorID;
 
+    private int idProduto = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +132,20 @@ public class CadastroFornecedor extends AppCompatActivity {
         fornecedorID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         DocumentReference documentReference = db.collection("Fornecedores").document(fornecedorID);
+
+        /*String idProduct = String.valueOf(idProduto);
+
+        DocumentReference dr = documentReference.collection("Produtos").document(idProduct);
+
+        idProduto++;
+
+        Map<String, Object> produtos = new HashMap<>();
+
+        produtos.put("nome", "pastel");
+        produtos.put("preço", 5.90);
+        produtos.put("quantidade", 40);
+        dr.set(produtos);*/
+
 
         documentReference.set(fornecedores).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
