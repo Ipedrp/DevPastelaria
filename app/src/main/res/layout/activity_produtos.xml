@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Produtos">
+
+    <TextView
+        android:id="@+id/textCadastroProdutoFornecedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Nome do fornecedor"
+        android:textColor="@color/yellow"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071"
+        />
+
+    <View
+        android:id="@+id/container_components"
+        style="@style/ContainerComponentsLogin"
+        android:layout_marginTop="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCadastroProdutoFornecedor"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edit_nomeCadastroProdutoFornecedor"
+        style="@style/EditText"
+        android:hint="Nome do produto"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toTopOf="@id/container_components"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edit_valorCadastroProdutoFornecedor"
+        style="@style/EditText"
+        android:hint="Valor"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/edit_nomeCadastroProdutoFornecedor" />
+
+    <EditText
+        android:id="@+id/edit_quantidadeProdutoFornecedor"
+        style="@style/EditText"
+        android:hint="Quantidade"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintEnd_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/edit_valorCadastroProdutoFornecedor" />
+
+    <Button
+        android:id="@+id/btnCadastroProdutoForncedor"
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:width="300dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Cadastrar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_components"
+        tools:ignore="TextSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
