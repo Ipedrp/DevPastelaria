@@ -119,7 +119,7 @@ public class CadastroFornecedor extends AppCompatActivity {
 
     }
 
-    private  void SalvarDadosFornecedor(){
+    private void SalvarDadosFornecedor(){
 
         String nome = nomeFornecedor.getText().toString();
 
