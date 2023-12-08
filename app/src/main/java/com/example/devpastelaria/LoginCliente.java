@@ -128,7 +128,7 @@ public class LoginCliente extends AppCompatActivity {
 
     private void MenuTelaPrincipal(){
 
-        Intent c = new Intent(LoginCliente.this, PerfilCliente.class);
+        Intent c = new Intent(LoginCliente.this, MenuCliente.class);
 
         startActivity(c);
 
