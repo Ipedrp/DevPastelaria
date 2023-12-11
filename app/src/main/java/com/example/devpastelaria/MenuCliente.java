@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuCliente extends AppCompatActivity {
 
-    private Button verProdutos, verFornecedores;
+    private Button verProdutos, verFornecedores, perfilCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MenuCliente extends AppCompatActivity {
 
         InciarMenuCliente();
 
-       /* verFornecedores.setOnClickListener(new View.OnClickListener() {
+        verFornecedores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -26,17 +26,28 @@ public class MenuCliente extends AppCompatActivity {
                 startActivity(vf);
 
             }
-        });*/
+        });
 
-        verProdutos.setOnClickListener(new View.OnClickListener() {
+
+        perfilCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent vp = new Intent(MenuCliente.this, TodosProdutos.class);
-                startActivity(vp);
+                Intent pc = new Intent(MenuCliente.this, PerfilCliente.class);
+                startActivity(pc);
 
             }
         });
+
+        /*verProdutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent vp = new Intent(MenuCliente.this, TodosFornecedores.class);
+                startActivity(vp);
+
+            }
+        });*/
     }
 
 
@@ -44,6 +55,7 @@ public class MenuCliente extends AppCompatActivity {
 
         verProdutos = findViewById(R.id.btnPasteis);
         verFornecedores = findViewById(R.id.btnVerTodosForncedores);
+        perfilCliente = findViewById(R.id.btnPerfilUsuário);
 
     }
 

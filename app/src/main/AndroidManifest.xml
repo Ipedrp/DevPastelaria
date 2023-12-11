@@ -16,9 +16,6 @@
             android:name=".TodosFornecedores"
             android:exported="false" />
         <activity
-            android:name=".TodosProdutos"
-            android:exported="false" />
-        <activity
             android:name=".Produtos"
             android:exported="false" />
         <activity

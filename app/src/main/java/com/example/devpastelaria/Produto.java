@@ -4,9 +4,11 @@ import java.util.Objects;
 
 public class Produto {
 
-    private String nome;
-    private double preco;
-    private int qtd;
+    String nome;
+    double preco;
+    int qtd;
+
+    public Produto(){}
 
     public Produto(String nome, double preco, int qtd) {
         this.nome = nome;
@@ -15,29 +17,36 @@ public class Produto {
     }
 
     public String getNome() {
+
         return nome;
     }
 
     public void setNome(String nome) {
+
         this.nome = nome;
     }
 
     public double getPreco() {
+
         return preco;
     }
 
     public void setPreco(double preco) {
+
         this.preco = preco;
     }
 
     public int getQtd() {
+
         return qtd;
     }
 
     public void setQtd(int qtd) {
+
         this.qtd = qtd;
     }
 
+   /*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,6 +57,9 @@ public class Produto {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(nome);
     }
+    */
+
 }
