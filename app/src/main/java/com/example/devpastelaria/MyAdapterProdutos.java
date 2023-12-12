@@ -21,6 +21,8 @@ public class MyAdapterProdutos extends RecyclerView.Adapter<MyAdapterProdutos.My
         this.context = context;
         this.produtosArrayList = produtosArrayList;
     }
+
+
     @NonNull
     @Override
     public MyViewHolderP onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
