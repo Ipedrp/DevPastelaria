@@ -39,15 +39,15 @@ public class MenuCliente extends AppCompatActivity {
             }
         });
 
-        /*verProdutos.setOnClickListener(new View.OnClickListener() {
+        verProdutos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent vp = new Intent(MenuCliente.this, TodosFornecedores.class);
+                Intent vp = new Intent(MenuCliente.this, ProdutosFornecedor.class);
                 startActivity(vp);
 
             }
-        });*/
+        });
     }
 
 
