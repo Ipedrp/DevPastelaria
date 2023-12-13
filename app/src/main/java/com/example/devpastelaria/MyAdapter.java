@@ -49,13 +49,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 int clickedPosition = holder.getAdapterPosition();
                 if (clickedPosition != RecyclerView.NO_POSITION) {
                     // You can now use 'clickedPosition' to identify which CardView was clicked
-                    Fornecedores clickedProduto = fornecedoresArrayList.get(clickedPosition);
+                    Fornecedores clickedFornecedor = fornecedoresArrayList.get(clickedPosition);
 
                     // Perform actions based on the clicked item
                     // For example, show a toast with the product name
 
                     Intent intent = new Intent(view.getContext(), ProdutosFornecedor.class);
-                    intent.putExtra(ProdutosFornecedor.FORNECEDOR_NAME, clickedProduto.getNome());
+                    intent.putExtra(ProdutosFornecedor.FORNECEDOR_NAME, clickedFornecedor.getId());
                     view.getContext().startActivity(intent);
                 }
             }

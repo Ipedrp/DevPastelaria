@@ -1,5 +1,6 @@
 package com.example.devpastelaria;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,8 +10,13 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -36,8 +42,8 @@ public class ProdutosFornecedor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produtos_fornecedor);
-        String productName = getIntent().getStringExtra(FORNECEDOR_NAME);
-        Log.d("PASSOU AQUI", "" + productName);
+        String fornecedorId = getIntent().getStringExtra(FORNECEDOR_NAME);
+        Log.d("PASSOU AQUI", "" + fornecedorId);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -52,32 +58,8 @@ public class ProdutosFornecedor extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-// Specify the collection
-        CollectionReference collection = db.collection("Fornecedores");
 
-// Specify the field name and its valu
-
-// Create a query to find the document with the specified field value
-        Query query = collection.whereEqualTo("nome", productName);
-
-        query.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Log.d("PASSOU AQUI 2", "eNTREI NO IF");
-                for (QueryDocumentSnapshot document : task.getResult()) {
-                    Log.d("PASSOU AQUI 3", "eNTREI NO FOR");
-                    // Access the document ID
-                    fornecedorID = document.getId();
-
-                    // Now, you have the document ID associated with the specified field value
-                    // You can use this ID as needed
-                    Log.d("Firestore", "Document ID: " + fornecedorID);
-                }
-            } else {
-                // Handle errors
-                Log.e("Firestore", "Error getting documents: ", task.getException());
-            }
-        });
-
+        fornecedorID = fornecedorId;
 
         produtoArrayList = new ArrayList<Produto>();
         myAdapter = new MyAdapterProdutos(ProdutosFornecedor.this, produtoArrayList);

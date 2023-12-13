@@ -23,7 +23,9 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CadastroFornecedor extends AppCompatActivity {
@@ -130,6 +132,8 @@ public class CadastroFornecedor extends AppCompatActivity {
         fornecedores.put("nome", nome);
 
         fornecedorID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        fornecedores.put("id", fornecedorID);
 
         DocumentReference documentReference = db.collection("Fornecedores").document(fornecedorID);
 

@@ -56,6 +56,15 @@
                 android:textSize="16dp"
                 android:layout_margin="5dp"/>
 
+            <Button
+                android:id="@+id/btnBebidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:text="Bebidas"
+                android:textSize="16dp"
+                android:layout_margin="5dp"/>
+
 
 
 
