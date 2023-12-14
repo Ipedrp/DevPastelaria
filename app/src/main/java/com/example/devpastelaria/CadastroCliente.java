@@ -130,6 +130,7 @@ public class CadastroCliente extends AppCompatActivity {
 
         usuarios.put("nome", nome);
 
+
         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         DocumentReference documentReference = db.collection("Usuarios").document(usuarioID);

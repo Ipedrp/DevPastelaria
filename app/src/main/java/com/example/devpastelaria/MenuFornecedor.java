@@ -20,7 +20,7 @@ public class MenuFornecedor extends AppCompatActivity {
 
     private TextView nomeFornecedor;
 
-    private Button cadastrarProdutos, visualizarProdutos, verPerfilFornecedor;
+    private Button cadastrarProdutos, cadastrarBebidas, verPerfilFornecedor;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -58,6 +58,17 @@ public class MenuFornecedor extends AppCompatActivity {
             }
         });
 
+        cadastrarBebidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent cb = new Intent(MenuFornecedor.this, CadastroBebidas.class);
+
+                startActivity(cb);
+
+            }
+        });
+
 
     }
 
@@ -86,7 +97,7 @@ public class MenuFornecedor extends AppCompatActivity {
 
         nomeFornecedor = findViewById(R.id.nome_menu_fornecedor);
         cadastrarProdutos = findViewById(R.id.btncadastrarProdutosMenuFornecedor);
-        visualizarProdutos = findViewById(R.id.btnvisualizarProdutosMenuFornecedor);
+        cadastrarBebidas = findViewById(R.id.btncadastrarBebidasMenuFornecedor);
         verPerfilFornecedor = findViewById(R.id.btnverPerfilMenuFornecedor);
 
     }

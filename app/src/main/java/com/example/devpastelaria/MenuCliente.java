@@ -28,6 +28,15 @@ public class MenuCliente extends AppCompatActivity {
             }
         });
 
+        verBebidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent vb = new Intent(MenuCliente.this, TodosFornecedores2.class);
+                startActivity(vb);
+            }
+        });
+
 
         perfilCliente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,14 +58,7 @@ public class MenuCliente extends AppCompatActivity {
             }
         });
 
-        verBebidas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent vb = new Intent(MenuCliente.this, TelaCardapioBebidas.class);
-                startActivity(vb);
-            }
-        });
 
 
 
