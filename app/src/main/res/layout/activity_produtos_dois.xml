@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".CadastroBebidas">
+    tools:context=".ProdutosDois">
+
 
     <TextView
-        android:id="@+id/textCadastroBebidaFornecedor"
+        android:id="@+id/textCadastroProdutoDoisFornecedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Cadastro de bebidas"
+        android:text="Cadastro de pastel"
         android:textColor="@color/yellow"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -25,45 +25,45 @@
         />
 
     <View
-        android:id="@+id/container_components"
+        android:id="@+id/container_components_Dois"
         style="@style/ContainerComponentsLogin"
         android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCadastroBebidaFornecedor"
+        app:layout_constraintTop_toBottomOf="@+id/textCadastroProdutoDoisFornecedor"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edit_nomeCadastroBebidaFornecedor"
+        android:id="@+id/edit_nomeCadastroProdutoDoisFornecedor"
         style="@style/EditText"
         android:hint="Nome da bebida"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintEnd_toEndOf="@id/container_components"
-        app:layout_constraintTop_toTopOf="@id/container_components"
+        app:layout_constraintStart_toStartOf="@id/container_components_Dois"
+        app:layout_constraintEnd_toEndOf="@id/container_components_Dois"
+        app:layout_constraintTop_toTopOf="@id/container_components_Dois"
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/edit_valorCadastroBebidaFornecedor"
+        android:id="@+id/edit_valorCadastroProdutoDoisFornecedor"
         style="@style/EditText"
         android:hint="Valor"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintEnd_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/edit_nomeCadastroBebidaFornecedor" />
+        app:layout_constraintStart_toStartOf="@id/container_components_Dois"
+        app:layout_constraintEnd_toEndOf="@id/container_components_Dois"
+        app:layout_constraintTop_toBottomOf="@id/edit_nomeCadastroProdutoDoisFornecedor" />
 
     <EditText
-        android:id="@+id/edit_quantidadeBebidaFornecedor"
+        android:id="@+id/edit_quantidadeProdutoDoisFornecedor"
         style="@style/EditText"
         android:hint="Quantidade"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintEnd_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/edit_valorCadastroBebidaFornecedor" />
+        app:layout_constraintStart_toStartOf="@id/container_components_Dois"
+        app:layout_constraintEnd_toEndOf="@id/container_components_Dois"
+        app:layout_constraintTop_toBottomOf="@id/edit_valorCadastroProdutoDoisFornecedor" />
 
     <Button
-        android:id="@+id/btnCadastroBebidaForncedor"
+        android:id="@+id/btnCadastroProdutoDoisForncedor"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,8 +75,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/container_components_Dois"
         tools:ignore="TextSizeCheck" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

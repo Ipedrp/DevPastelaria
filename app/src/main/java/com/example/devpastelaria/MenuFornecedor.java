@@ -62,7 +62,7 @@ public class MenuFornecedor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent cb = new Intent(MenuFornecedor.this, CadastroBebidas.class);
+                Intent cb = new Intent(MenuFornecedor.this, ProdutosDois.class);
 
                 startActivity(cb);
 

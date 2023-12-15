@@ -1,12 +1,14 @@
 package com.example.devpastelaria;
 
-public class Bebida {
+public class ProdutoDois {
 
     String nome;
     double preco;
     int qtd;
 
-    public Bebida(String nome, double preco, int qtd) {
+    public ProdutoDois(){}
+
+    public ProdutoDois(String nome, double preco, int qtd) {
         this.nome = nome;
         this.preco = preco;
         this.qtd = qtd;

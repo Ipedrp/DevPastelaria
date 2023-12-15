@@ -32,7 +32,7 @@ public class MenuCliente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent vb = new Intent(MenuCliente.this, TodosFornecedores2.class);
+                Intent vb = new Intent(MenuCliente.this, TodosFornecedoresDois.class);
                 startActivity(vb);
             }
         });

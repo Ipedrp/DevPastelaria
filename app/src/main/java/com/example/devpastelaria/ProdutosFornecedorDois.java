@@ -18,13 +18,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class TelaFornecedoresBebidas extends AppCompatActivity {
+public class ProdutosFornecedorDois extends AppCompatActivity {
 
     public static final String FORNECEDOR_NAME = "fornecedor_name";
-    RecyclerView recyclerView;
-    ArrayList<Bebida> bebidaArrayList;
 
-    MyAdapterBebidas myAdapter;
+    RecyclerView recyclerView;
+    ArrayList<ProdutoDois> produtoDoisArrayList;
+
+    MyAdapterProdutosDois myAdapter;
 
     FirebaseFirestore db;
 
@@ -35,7 +36,7 @@ public class TelaFornecedoresBebidas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_fornecedores_bebidas);
+        setContentView(R.layout.activity_produtos_fornecedor_dois);
 
         String fornecedorId = getIntent().getStringExtra(FORNECEDOR_NAME);
         Log.d("PASSOU AQUI", "" + fornecedorId);
@@ -45,7 +46,8 @@ public class TelaFornecedoresBebidas extends AppCompatActivity {
         progressDialog.setMessage("Buscando dados...");
         progressDialog.show();
 
-        recyclerView = findViewById(R.id.recyclerViewTodasBebidas);
+
+        recyclerView = findViewById(R.id.aquiPorraDois);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -53,21 +55,20 @@ public class TelaFornecedoresBebidas extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
         fornecedorID = fornecedorId;
 
-        bebidaArrayList = new ArrayList<Bebida>();
-        myAdapter = new MyAdapterBebidas(TelaFornecedoresBebidas.this, bebidaArrayList);
+        produtoDoisArrayList = new ArrayList<ProdutoDois>();
+        myAdapter = new MyAdapterProdutosDois(ProdutosFornecedorDois.this, produtoDoisArrayList);
 
         recyclerView.setAdapter(myAdapter);
 
         EventChangeListene();
-    }
 
+    }
 
     private void EventChangeListene() {
 
-        db.collection("Fornecedores").document(fornecedorID).collection("Bebidas").orderBy("nome", Query.Direction.ASCENDING)
+        db.collection("Fornecedores").document(fornecedorID).collection("ProdutosDois").orderBy("nome", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -86,7 +87,7 @@ public class TelaFornecedoresBebidas extends AppCompatActivity {
 
                             if(dc.getType() == DocumentChange.Type.ADDED){
 
-                                bebidaArrayList.add(dc.getDocument().toObject(Bebida.class));
+                                produtoDoisArrayList.add(dc.getDocument().toObject(ProdutoDois.class));
 
                             }
 

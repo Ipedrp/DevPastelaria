@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Nome do fornecedor"
+        android:text="Cadastro de pastel"
         android:textColor="@color/yellow"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
     <EditText
         android:id="@+id/edit_nomeCadastroProdutoFornecedor"
         style="@style/EditText"
-        android:hint="Nome do produto"
+        android:hint="Nome do pastel"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintEnd_toEndOf="@id/container_components"

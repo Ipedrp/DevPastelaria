@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".TodosFornecedores2">
+    tools:context=".TodosFornecedoresDois">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/aquiPorra"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginStart="16dp"
@@ -22,6 +22,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

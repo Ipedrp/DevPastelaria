@@ -1,13 +1,15 @@
 package com.example.devpastelaria;
 
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.util.Log;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -18,39 +20,39 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class TodosFornecedores2 extends AppCompatActivity {
-
+public class TodosFornecedoresDois extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<Fornecedores> fornecedoresArrayList;
+    ArrayList<FornecedoresDois> fornecedoresDoisArrayList;
 
-    MyAdapter2 myAdapter;
+    MyAdapterDois myAdapterDois;
 
     FirebaseFirestore db;
 
     ProgressDialog progressDialog;
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todos_fornecedores2);
+        setContentView(R.layout.activity_todos_fornecedores_dois);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Buscando dados...");
         progressDialog.show();
 
-        recyclerView = findViewById(R.id.recyclerView2);
+        recyclerView = findViewById(R.id.aquiPorra);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         db = FirebaseFirestore.getInstance();
 
-        fornecedoresArrayList = new ArrayList<Fornecedores>();
-        myAdapter = new MyAdapter2(TodosFornecedores2.this, fornecedoresArrayList);
+        fornecedoresDoisArrayList = new ArrayList<FornecedoresDois>();
+        myAdapterDois = new MyAdapterDois(TodosFornecedoresDois.this, fornecedoresDoisArrayList);
 
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(myAdapterDois);
 
         EventChangeListene();
+
     }
 
     private void EventChangeListene() {
@@ -74,12 +76,12 @@ public class TodosFornecedores2 extends AppCompatActivity {
 
                             if(dc.getType() == DocumentChange.Type.ADDED){
 
-                                fornecedoresArrayList.add(dc.getDocument().toObject(Fornecedores.class));
+                                fornecedoresDoisArrayList.add(dc.getDocument().toObject(FornecedoresDois.class));
 
                             }
 
 
-                            myAdapter.notifyDataSetChanged();
+                            myAdapterDois.notifyDataSetChanged();
 
                             if(progressDialog.isShowing())
                                 progressDialog.dismiss();
@@ -92,4 +94,6 @@ public class TodosFornecedores2 extends AppCompatActivity {
                 });
 
     }
+
+
 }

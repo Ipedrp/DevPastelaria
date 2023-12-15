@@ -12,33 +12,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder>{
+public class MyAdapterDois extends RecyclerView.Adapter<MyAdapterDois.MyViewHolderD>{
 
     Context context;
 
-    ArrayList<Fornecedores> fornecedoresArrayList;
+    ArrayList<FornecedoresDois> fornecedoresDoisArrayList;
 
-    public MyAdapter2(Context context, ArrayList<Fornecedores> fornecedoresArrayList) {
+    public MyAdapterDois(Context context, ArrayList<FornecedoresDois> fornecedoresDoisArrayList) {
         this.context = context;
-        this.fornecedoresArrayList = fornecedoresArrayList;
+        this.fornecedoresDoisArrayList = fornecedoresDoisArrayList;
     }
 
     @NonNull
     @Override
-    public MyAdapter2.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyAdapterDois.MyViewHolderD onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_dois, parent, false);
+
+        return new MyAdapterDois.MyViewHolderD(v);
 
 
-
-
-        return new MyViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter2.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyAdapterDois.MyViewHolderD holder, int position) {
 
-        Fornecedores fornecedores = fornecedoresArrayList.get(position);
+        FornecedoresDois fornecedores = fornecedoresDoisArrayList.get(position);
 
         holder.nomeFornecedorVerTudo.setText(fornecedores.nome);
 
@@ -49,36 +48,34 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder>{
                 int clickedPosition = holder.getAdapterPosition();
                 if (clickedPosition != RecyclerView.NO_POSITION) {
                     // You can now use 'clickedPosition' to identify which CardView was clicked
-                    Fornecedores clickedFornecedor = fornecedoresArrayList.get(clickedPosition);
+                    FornecedoresDois clickedFornecedor = fornecedoresDoisArrayList.get(clickedPosition);
 
                     // Perform actions based on the clicked item
                     // For example, show a toast with the product name
 
-                    Intent intent = new Intent(view.getContext(), TelaFornecedoresBebidas.class);
+                    Intent intent = new Intent(view.getContext(), ProdutosFornecedorDois.class);
                     intent.putExtra(ProdutosFornecedor.FORNECEDOR_NAME, clickedFornecedor.getId());
                     view.getContext().startActivity(intent);
                 }
             }
         });
-
     }
 
     @Override
     public int getItemCount() {
 
-        return fornecedoresArrayList.size();
-
+        return fornecedoresDoisArrayList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolderD extends RecyclerView.ViewHolder{
 
 
         TextView nomeFornecedorVerTudo;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolderD(@NonNull View itemView) {
             super(itemView);
 
-            nomeFornecedorVerTudo = itemView.findViewById(R.id.nomeDoFornecedorVerTudo);
+            nomeFornecedorVerTudo = itemView.findViewById(R.id.nomeDoFornecedorVerTudoDois);
         }
     }
 }
