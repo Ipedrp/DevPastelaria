@@ -1,6 +1,7 @@
 package com.example.devpastelaria;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,10 @@ public class MyAdapterProdutosDois extends RecyclerView.Adapter<MyAdapterProduto
     ArrayList<ProdutoDois> produtosDoisArrayList;
 
     public MyAdapterProdutosDois(Context context, ArrayList<ProdutoDois> produtosDoisArrayList) {
+
         this.context = context;
         this.produtosDoisArrayList = produtosDoisArrayList;
+
     }
 
     @NonNull
@@ -34,10 +37,32 @@ public class MyAdapterProdutosDois extends RecyclerView.Adapter<MyAdapterProduto
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapterProdutosDois.MyViewHolderPD holder, int position) {
+
         ProdutoDois produtosDois = produtosDoisArrayList.get(position);
 
         holder.nomeProdutoDoisVerTudo.setText(produtosDois.nome);
         holder.nomePrecoDoisVerTudo.setText(String.valueOf(produtosDois.preco));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle the click event here
+                int clickedPosition = holder.getAdapterPosition();
+                if (clickedPosition != RecyclerView.NO_POSITION) {
+                    // You can now use 'clickedPosition' to identify which CardView was clicked
+                    ProdutoDois clickedFornecedor = produtosDoisArrayList.get(clickedPosition);
+
+                    // Perform actions based on the clicked item
+                    // For example, show a toast with the product name
+
+                    Intent intent = new Intent(view.getContext(), /*telaCarrinho*/);
+                    intent.putExtra(/*codigo*/, /*idDoClienteQueEstaLogado*/);
+                    intent.putExtra(/*codigo2*/, /*idDoProdutoQueFoiClicado*/);
+                    view.getContext().startActivity(intent);
+
+                }
+            }
+        });
 
     }
 
