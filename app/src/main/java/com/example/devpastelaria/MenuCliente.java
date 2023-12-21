@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuCliente extends AppCompatActivity {
 
-    private Button verProdutos, verFornecedores, perfilCliente, verBebidas;
+    private Button  verFornecedores, perfilCliente, verBebidas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +48,7 @@ public class MenuCliente extends AppCompatActivity {
             }
         });
 
-        verProdutos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent vp = new Intent(MenuCliente.this, ProdutosFornecedor.class);
-                startActivity(vp);
-
-            }
-        });
 
 
 
@@ -67,7 +59,6 @@ public class MenuCliente extends AppCompatActivity {
 
     public void InciarMenuCliente(){
 
-        verProdutos = findViewById(R.id.btnPasteis);
         verFornecedores = findViewById(R.id.btnVerTodosForncedores);
         perfilCliente = findViewById(R.id.btnPerfilUsuário);
         verBebidas = findViewById(R.id.btnBebidas);

@@ -1,5 +1,7 @@
 package com.example.devpastelaria;
 
+import static com.example.devpastelaria.ProdutosFornecedor.FORNECEDOR_NAME;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -55,9 +57,8 @@ public class MyAdapterProdutos extends RecyclerView.Adapter<MyAdapterProdutos.My
                     // Perform actions based on the clicked item
                     // For example, show a toast with the product name
 
-                    Intent intent = new Intent(view.getContext(), /*telaCarrinho*/);
-                    intent.putExtra(/*codigo*/, /*idDoClienteQueEstaLogado*/);
-                    intent.putExtra(/*codigo2*/, /*idDoProdutoQueFoiClicado*/);
+                    Intent intent = new Intent(view.getContext(), ProdutosFornecedor.class);
+                    intent.putExtra(FORNECEDOR_NAME , (CharSequence) clickedFornecedor);
                     view.getContext().startActivity(intent);
 
                 }

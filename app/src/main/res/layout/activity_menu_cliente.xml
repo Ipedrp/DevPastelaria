@@ -48,14 +48,6 @@
                 android:layout_margin="5dp"/>
 
 
-            <Button
-                android:id="@+id/btnPasteis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/yellow"
-                android:text="Pasteis"
-                android:textSize="16dp"
-                android:layout_margin="5dp"/>
 
             <Button
                 android:id="@+id/btnPerfilUsuário"

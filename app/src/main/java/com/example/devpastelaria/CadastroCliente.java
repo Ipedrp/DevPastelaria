@@ -3,6 +3,7 @@ package com.example.devpastelaria;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -83,6 +84,9 @@ public class CadastroCliente extends AppCompatActivity {
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
+
+                    Intent tlc = new Intent(getApplicationContext(), LoginCliente.class);
+                    startActivity(tlc);
 
                 } else {
 

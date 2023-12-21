@@ -106,11 +106,19 @@ public class Produtos extends AppCompatActivity {
 
         idProduto += 1;
 
+        Snackbar snackbar = Snackbar.make(view, mensagem[1], Snackbar.LENGTH_SHORT);
+        snackbar.setBackgroundTint(Color.WHITE);
+        snackbar.setTextColor(Color.BLACK);
+        snackbar.show();
+
+
+
         documentReference.set(produtos).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
                 Log.d("db", "Sucesso ao salvar do dados dp produto!");
+
 
             }
         })
